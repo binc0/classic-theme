@@ -22,35 +22,43 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="container">
-  <div class="row">
+
+<div class="container mx-auto">
+  <div class="bg-gray-50 py-12 rounded-2xl mb-8">
     {block name='hook_footer_before'}
       {hook h='displayFooterBefore'}
     {/block}
   </div>
 </div>
-<div class="footer-container">
-  <div class="container">
-    <div class="row">
+
+<footer class="bg-gray-900 text-gray-300 py-12">
+  <div class="container mx-auto">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
     </div>
-    <div class="row">
-      {block name='hook_footer_after'}
-        {hook h='displayFooterAfter'}
-      {/block}
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <p class="text-sm-center">
+    
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-800 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <!-- Copyright -->
+        <div class="text-gray-400 text-sm text-center md:text-left">
           {block name='copyright_link'}
-            <a href="https://www.prestashop-project.org/" target="_blank" rel="noopener noreferrer nofollow">
+            <a href="https://www.prestashop-project.org/" target="_blank" rel="noopener noreferrer nofollow" class="hover:text-white transition-colors duration-200">
               {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
             </a>
           {/block}
-        </p>
+        </div>
+        
+        <!-- Footer After Hook -->
+        <div class="flex space-x-4">
+          {block name='hook_footer_after'}
+            {hook h='displayFooterAfter'}
+          {/block}
+        </div>
       </div>
     </div>
   </div>
-</div>
+</footer>

@@ -33,6 +33,7 @@ const config = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
     theme: ['./js/theme.js', './css/theme.scss'],
+    'minimal-theme': ['./js/theme.js', './css/minimal-theme.scss'],
     error: ['./css/error.scss'],
   },
   output: {
