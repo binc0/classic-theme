@@ -1,0 +1,70 @@
+/* Minimal Footer Styles */
+.footer {
+  @apply bg-gray-900 text-gray-300 py-12;
+  
+  .footer-content {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+    
+    .footer-block {
+      h3 {
+        @apply text-white font-semibold mb-4 text-lg;
+      }
+      
+      ul {
+        @apply space-y-2 list-none m-0 p-0;
+        
+        li a {
+          @apply text-gray-400 hover:text-white transition-colors duration-200;
+          text-decoration: none;
+        }
+      }
+      
+      p {
+        @apply text-gray-400 leading-relaxed;
+      }
+    }
+  }
+  
+  .footer-bottom {
+    @apply border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0;
+    
+    .copyright {
+      @apply text-gray-400 text-sm;
+    }
+    
+    .social-links {
+      @apply flex space-x-4;
+      
+      a {
+        @apply text-gray-400 hover:text-white transition-colors duration-200 p-2;
+        
+        i {
+          @apply text-xl;
+        }
+      }
+    }
+    
+    .payment-methods {
+      @apply flex space-x-2 opacity-60;
+      
+      img {
+        @apply h-6 w-auto grayscale hover:grayscale-0 transition-all duration-200;
+      }
+    }
+  }
+}
+
+/* Newsletter signup */
+.newsletter-block {
+  .newsletter-form {
+    @apply flex mt-4;
+    
+    input[type="email"] {
+      @apply flex-1 px-4 py-2 border border-gray-600 bg-gray-800 text-white rounded-l-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none;
+    }
+    
+    button {
+      @apply px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-r-lg transition-colors duration-200;
+    }
+  }
+}

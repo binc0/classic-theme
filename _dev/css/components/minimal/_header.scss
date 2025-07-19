@@ -1,0 +1,65 @@
+/* Minimal Header Styles */
+.header-banner {
+  @apply bg-gray-50 py-2 text-sm;
+  
+  .container {
+    @apply flex justify-center items-center text-gray-600;
+  }
+}
+
+.header-nav {
+  @apply bg-white border-b border-gray-100;
+  
+  .container {
+    @apply py-2;
+  }
+  
+  .right-nav {
+    @apply flex justify-end items-center space-x-6;
+    
+    a {
+      @apply text-gray-600 hover:text-gray-900 text-sm;
+    }
+  }
+}
+
+.header-top {
+  @apply bg-white py-4;
+  
+  .header-top-right {
+    @apply flex items-center justify-end space-x-4;
+  }
+}
+
+#_desktop_logo {
+  @apply flex items-center;
+  
+  h1, a {
+    @apply block;
+  }
+  
+  img {
+    @apply h-8 w-auto;
+  }
+}
+
+/* Mobile header styles */
+@screen max-md {
+  .mobile {
+    #menu-icon {
+      @apply p-2 text-gray-600;
+      
+      i {
+        @apply text-2xl;
+      }
+    }
+    
+    .top-logo {
+      @apply flex justify-center py-2;
+      
+      img {
+        @apply h-8 w-auto;
+      }
+    }
+  }
+}

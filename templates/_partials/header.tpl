@@ -22,32 +22,35 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
 {block name='header_banner'}
-  <div class="header-banner">
-    {hook h='displayBanner'}
+  <div class="bg-gray-50 py-2 text-sm">
+    <div class="container mx-auto text-center text-gray-600">
+      {hook h='displayBanner'}
+    </div>
   </div>
 {/block}
 
 {block name='header_nav'}
-  <nav class="header-nav">
-    <div class="container">
-      <div class="row">
-        <div class="hidden-sm-down">
-          <div class="col-md-5 col-xs-12">
-            {hook h='displayNav1'}
-          </div>
-          <div class="col-md-7 right-nav">
-              {hook h='displayNav2'}
-          </div>
+  <nav class="bg-white border-b border-gray-100">
+    <div class="container mx-auto py-2">
+      <div class="flex justify-between items-center">
+        <div class="hidden md:flex">
+          {hook h='displayNav1'}
         </div>
-        <div class="hidden-md-up text-sm-center mobile">
-          <div class="float-xs-left" id="menu-icon">
-            <i class="material-icons d-inline">&#xE5D2;</i>
+        <div class="hidden md:flex items-center space-x-6">
+          {hook h='displayNav2'}
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden flex items-center justify-between w-full">
+          <div class="p-2 text-gray-600" id="menu-icon">
+            <i class="material-icons text-2xl">&#xE5D2;</i>
           </div>
-          <div class="float-xs-right" id="_mobile_cart"></div>
-          <div class="float-xs-right" id="_mobile_user_info"></div>
-          <div class="top-logo" id="_mobile_logo"></div>
-          <div class="clearfix"></div>
+          <div class="flex items-center space-x-2">
+            <div id="_mobile_user_info"></div>
+            <div id="_mobile_cart"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -55,13 +58,14 @@
 {/block}
 
 {block name='header_top'}
-  <div class="header-top">
-    <div class="container">
-       <div class="row">
-        <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
+  <div class="bg-white py-4 border-b border-gray-100">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center" id="_desktop_logo">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}
-              <h1>
+              <h1 class="m-0">
                 {renderLogo}
               </h1>
             {else}
@@ -69,17 +73,28 @@
             {/if}
           {/if}
         </div>
-        <div class="header-top-right col-md-10 col-sm-12 position-static">
+        
+        <!-- Search and Navigation -->
+        <div class="flex-1 flex items-center justify-end space-x-6 ml-8">
           {hook h='displayTop'}
         </div>
       </div>
-      <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
-        <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
-        <div class="js-top-menu-bottom">
+      
+      <!-- Mobile Top Menu -->
+      <div id="mobile_top_menu_wrapper" class="md:hidden mt-4" style="display:none;">
+        <div class="py-2" id="_mobile_top_menu"></div>
+        <div class="border-t border-gray-100 pt-4 space-y-2">
           <div id="_mobile_currency_selector"></div>
           <div id="_mobile_language_selector"></div>
           <div id="_mobile_contact_link"></div>
         </div>
+      </div>
+      
+      <!-- Mobile Logo -->
+      <div class="md:hidden text-center py-4" id="_mobile_logo">
+        {if $shop.logo_details}
+          {renderLogo}
+        {/if}
       </div>
     </div>
   </div>
