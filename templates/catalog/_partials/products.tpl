@@ -29,10 +29,10 @@
     {include file='_partials/pagination.tpl' pagination=$listing.pagination}
   {/block}
 
-  <div class="hidden-md-up text-xs-right up">
-    <a href="#header" class="btn btn-secondary">
+  <div class="md:hidden text-right mt-6">
+    <a href="#header" class="inline-flex items-center px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-lg transition-colors duration-200">
       {l s='Back to top' d='Shop.Theme.Actions'}
-      <i class="material-icons">&#xE316;</i>
+      <i class="material-icons ml-1">&#xE316;</i>
     </a>
   </div>
 </div>
